@@ -5,8 +5,6 @@ class Solution {
         val negDia = HashSet<Int>() //...of negative diagonals R-C
         val temp: ArrayList<ArrayList<String>> = arrayListOf() // to hold our temporary distinct solution
         val res: ArrayList<ArrayList<String>> = arrayListOf() // result with each distinct solutin where each input is a solution
-        //val tempRow = tempRow(n)
-        //temp.add(tempRow)
         fillWithQueens(0,n,res,cols,posDia,negDia,temp)
         return res
     }
