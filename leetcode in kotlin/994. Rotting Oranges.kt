@@ -14,7 +14,6 @@ class Solution {
         }
         while(!q.isEmpty() && fresh > 0){
             //we iterate all the positions that were added at time x
-            print("queue size: ${q.size} \n")
             repeat(q.size){
                 val (x,y) = q.poll()
                 for(i in 0..3){
@@ -26,7 +25,6 @@ class Solution {
                     }
                 }
             }
-            print("mins++\n")
             mins++
         }
         //did we miss some oranges that were unreachable ?
