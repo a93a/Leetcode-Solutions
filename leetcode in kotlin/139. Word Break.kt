@@ -12,7 +12,6 @@ class Solution {
                 }
             }
         }
-        print(cache.joinToString(",")+"\n")
         return cache[0]
     }
 }
