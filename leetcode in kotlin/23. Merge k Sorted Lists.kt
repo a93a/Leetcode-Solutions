@@ -58,7 +58,6 @@ class Solution {
 
 // using minHeap, add K nodes to minHeap and poll
 // time O(NlongK) and space O(K)
-/**
 class Solution {
     fun mergeKLists(lists: Array<ListNode?>): ListNode? {
         if(lists.size == 0)
@@ -107,5 +106,4 @@ class Solution {
         }
         return root
     }
-} 
-**/
+}
