@@ -29,14 +29,24 @@ class Solution {
     }
 }
 
-
+//another way of doing it in O(nlogn)
+//using a heap
+class Solution {
+    fun findKthLargest(nums: IntArray, k: Int): Int {
+        val maxHeap = PriorityQueue<Int>{a,b -> b - a}
+        for(num in nums)
+            maxHeap.add(num)
+        repeat(k-1){    //remove the k-1 largest elements
+            maxHeap.poll()
+        }
+        return maxHeap.poll() //kth largest element
+    }
+}
 
 //"cheat solution" with average O(nlogn)
-/**
 class Solution {
     fun findKthLargest(nums: IntArray, k: Int): Int {
         nums.sortDescending()
         return nums[k-1]
     }
 }
-**/
