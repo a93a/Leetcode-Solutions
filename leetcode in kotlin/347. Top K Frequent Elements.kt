@@ -4,7 +4,7 @@ class Solution {
     // Time complexity is O(n)
     fun topKFrequent(nums: IntArray, k: Int): IntArray {
         val hm = HashMap<Int, Int>()
-        val bsa = MutableList<ArrayList<Int>>(nums.size+1){arrayListOf()} // 1 to n
+        val bsa = MutableList<ArrayList<Int>>(nums.size+1){arrayListOf()} // 1 to n, inverted "bucket sorted array"
         val res = ArrayList<Int>()
         
         for(n in nums)
