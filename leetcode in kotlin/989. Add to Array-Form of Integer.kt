@@ -4,7 +4,7 @@ class Solution {
         var toAdd = k
         val res = ArrayList<Int>()
         var pointer = num.size-1
-        while(pointer >= 0 || toAdd > 0) {
+        while(pointer >= 0 || toAdd > 0 || carry != 0) {
             val rightMostMask = toAdd % 10
             var temp = rightMostMask + carry
             if(pointer >= 0)
@@ -18,8 +18,6 @@ class Solution {
             toAdd = toAdd / 10
             pointer--
         }
-        if(carry == 1)
-            res.add(0, 1)
         return res
     }
 }
