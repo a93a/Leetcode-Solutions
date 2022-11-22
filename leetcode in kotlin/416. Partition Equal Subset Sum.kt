@@ -9,6 +9,8 @@ class Solution {
         dp[0] = true
         
         for(num in nums){
+            if(num > sum)
+                return false
             for(i in sum downTo 0){
                 if(i >= num)
                     dp[i] = dp[i] || dp[i-num]
