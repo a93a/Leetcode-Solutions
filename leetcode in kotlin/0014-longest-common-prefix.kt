@@ -65,3 +65,20 @@ class Solution {
         return strs[0].substring(0,len)
     }
 }
+
+/*
+* Sorting solution
+*/
+class Solution {
+    fun longestCommonPrefix(strs: Array<String>): String { 
+        var len = 0
+        strs.sort()
+        val first = strs[0]
+        val last = strs[strs.size-1]
+        val minLen = strs.minBy {it.length}?.length!!
+        for(i in 0 until minLen){
+            if(first[i] == last[i]) len++ else break
+        }
+        return strs[0].substring(0,len)
+    }
+}
