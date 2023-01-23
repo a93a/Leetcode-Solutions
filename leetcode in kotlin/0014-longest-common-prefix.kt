@@ -28,3 +28,40 @@ class Solution {
         return res
     }
 }
+
+/*
+* Trie solution
+*/
+class TrieNode() {
+    val child = arrayOfNulls<TrieNode>(26)
+    var isEnd = false
+    fun childCount() = this.child?.filter{it != null}?.count()
+}
+
+class Solution {
+    fun longestCommonPrefix(strs: Array<String>): String {
+        
+        val root: TrieNode? = TrieNode()
+
+        for(word in strs) {
+            var current = root
+            for(c in word){
+                if(current?.child?.get(c - 'a') == null){
+                    current?.child?.set(c - 'a', TrieNode())
+                }         
+                current = current?.child?.get(c - 'a')
+            }
+            current?.isEnd = true
+        }
+        
+        var current = root
+        var len = 0
+        for (c in strs[0]){
+            println(c)
+            if (current?.childCount() == 1 && current?.isEnd != true) len++ else break
+            current = current?.child?.get(c - 'a')
+        }
+        println(len)
+        return strs[0].substring(0,len)
+    }
+}
