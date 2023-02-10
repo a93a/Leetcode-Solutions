@@ -44,3 +44,32 @@ class Solution {
         intArrayOf(-1, 0)
     )
 }
+
+//DP solution
+class Solution {
+    fun maxDistance(grid: Array<IntArray>): Int {
+
+        val defaultValue = 100 + 100 + 1
+        
+        for (i in grid.indices) {
+            for (j in grid[0].indices) {
+                if (grid[i][j] == 1) continue
+                grid[i][j] = defaultValue
+                if(i > 0) grid[i][j] = minOf(grid[i][j], grid[i - 1][j] + 1)
+                if(j > 0) grid[i][j] = minOf(grid[i][j], grid[i][j - 1] + 1)
+            }
+        }
+
+        var res = 0
+        for (i in grid.lastIndex downTo 0) {
+            for (j in grid[0].lastIndex downTo 0) {
+                if (grid[i][j] == 1) continue
+                if(i < grid.lastIndex) grid[i][j] = minOf(grid[i][j], grid[i + 1][j] + 1)
+                if(j < grid[0].lastIndex) grid[i][j] = minOf(grid[i][j], grid[i][j + 1] + 1)
+                res = maxOf(res, grid[i][j])
+            }
+        }
+
+        return if (res == defaultValue) -1 else res - 1
+    }      
+}
