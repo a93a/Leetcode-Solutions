@@ -13,7 +13,7 @@
 class Solution {
     fun insertIntoBST(root: TreeNode?, value: Int): TreeNode? {
 
-        if (root == null) return TreeNode(value)   
+        root?: return TreeNode(value)
 
         if (value > root.value) root.right = insertIntoBST(root.right, value)
         else root.left = insertIntoBST(root.left, value)
@@ -28,7 +28,7 @@ class Solution {
 class Solution {
     fun insertIntoBST(root: TreeNode?, value: Int): TreeNode? {
 
-        if (root == null) return TreeNode(value)   
+        root?: return TreeNode(value)
 
         var current = root
 
