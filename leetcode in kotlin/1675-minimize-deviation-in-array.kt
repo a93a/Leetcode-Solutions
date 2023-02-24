@@ -1,3 +1,33 @@
+//another solution using a max Heap and a min Heap.
+class Solution {
+    fun minimumDeviation(nums: IntArray): Int {
+
+        val minHeap = PriorityQueue<Int>()
+        var maxHeap = PriorityQueue<Int>(Collections.reverseOrder())
+        var res = Integer.MAX_VALUE
+
+        // O(N)
+        for(num in nums) {
+            minHeap.add( if(num % 2 == 0) num else num * 2)
+            maxHeap.add( if(num % 2 == 0) num else num * 2)
+        }
+
+        var maxDiff = maxHeap.peek() - minHeap.peek()
+        var max = maxHeap.poll()
+
+        // O(nlogM * logN)
+        while(max % 2 == 0) {
+            max /= 2
+            minHeap.add(max)
+            maxHeap.add(max)
+            max = maxHeap.poll()
+            maxDiff = minOf(maxDiff, max - minHeap.peek())
+        }
+
+        return maxDiff
+    }
+}
+
 class Solution {
     fun minimumDeviation(nums: IntArray): Int {
 
