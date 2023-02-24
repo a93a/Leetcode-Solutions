@@ -7,6 +7,9 @@ class Solution {
         var res = Integer.MAX_VALUE
 
         // O(N)
+        // For each number, we are adding the largest number it can become
+        // Even numbers can't get bigger, so we add it
+        // Odd Numbers can get to twice it size, so we add that
         for(num in nums) {
             minHeap.add( if(num % 2 == 0) num else num * 2)
             maxHeap.add( if(num % 2 == 0) num else num * 2)
@@ -16,6 +19,8 @@ class Solution {
         var max = maxHeap.poll()
 
         // O(nlogM * logN)
+        // We are halving each even number in our max, adding it to min and max, and getting the new possible min each time
+        // Loop until maxHeap top reached an odd number, then we are checked all possible mins
         while(max % 2 == 0) {
             max /= 2
             minHeap.add(max)
