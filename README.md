@@ -1,9 +1,9 @@
 # Leetcode problem solutions in Kotlin
 
-Mix of easy, medium and hard questions. Playground to learn more and to try to become a better code and improve my skills. Some were easy to solve, some I did solve but found better solution for it, some I kind of solved or was close to, but had to find help online to solve it, and some were impossible for me to solve.
+A collection of solutions to Leetcode problems, all in Kotlin language. Mix of EASY, MEDIUM, and HARD questions. Problems are named `xxxx-problem-name-in-lowercase.kt`, for example [71. Simplify Path](https://leetcode.com/problems/simplify-path/) is named `0071-simplify-path.kt`. Usually all problems are solved in the most efficient way, but some problems contains several and different solutions, in the same file but clearly separated.
 
 (Interesting problems found on Lintcode but not on Leetcode have its own folder)
 
-I hope this repo will help you if you are looking for a specific solution to a problem in Kotlin. I named the files with the question/problem name so it would be easier to find. If you have a better solution for a problem, and would like to help, please do suggest it in issues or do a pull request. 
+I hope this repo will help you if you are looking for a specific solution to a problem in Kotlin. If you have a better solution for a problem, any optimization, another way of solving it, etc,  and would like to help, please do suggest it in issues or do a pull request.
 
 Thank you for looking by.
