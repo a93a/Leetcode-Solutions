@@ -1,3 +1,13 @@
+/*
+* O(n)
+*/
+class Solution {
+    fun maximizeSum(nums: IntArray, k: Int) = k * (nums.max()?: 0) + (k * (k - 1) / 2)
+}
+
+/*
+* O(nlogn)
+*/
 class Solution {
     fun maximizeSum(nums: IntArray, k: Int): Int {
         val q = PriorityQueue<Int>{a,b -> b - a}
