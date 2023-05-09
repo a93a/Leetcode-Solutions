@@ -5,5 +5,3 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 (Interesting problems found on Lintcode but not on Leetcode have its own folder)
 
 I hope this repo will help you if you are looking for a specific solution to a problem in Kotlin. If you have a better solution for a problem, any optimization, another way of solving it, etc,  and would like to help, please do suggest it in issues or do a pull request.
-
-Thank you for looking by.
