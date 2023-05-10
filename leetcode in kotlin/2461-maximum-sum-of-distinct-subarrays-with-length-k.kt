@@ -13,8 +13,10 @@ class Solution {
                 subArrSum -= nums[i - k + 1]
 
                 val n = nums[i - k + 1]
-                subArr[n] = subArr[n]!! - 1
-                if (subArr[n] == 0) subArr.remove(n)
+                if (subArr[n] == 1) 
+                    subArr.remove(n) 
+                else 
+                    subArr[n] = subArr[n]!! - 1
             }
         }
 
