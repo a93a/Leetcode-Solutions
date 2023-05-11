@@ -67,3 +67,35 @@ class Solution {
         return sum - dp[0][0] * 2
     }
 }
+
+/*
+* DP with space optimization O(n)
+*/
+class Solution {
+    fun minimumDeleteSum(s1: String, s2: String): Int {
+        var prev = IntArray(s2.length + 1)
+
+        for (i in s1.lastIndex downTo 0 ) {
+            val dp = IntArray(s2.length + 1)
+            for (j in s2.lastIndex downTo 0) {
+                if (s1[i] == s2[j]) {
+                    dp[j] = s2[j].toInt() + prev[j + 1]
+                } else {
+                    dp[j] = maxOf(
+                        dp[j + 1],
+                        prev[j]
+                    )
+                }
+            }
+            prev = dp
+        }
+
+        var sum = 0
+        for (c in s1)
+            sum += c.toInt()
+        for (c in s2)
+            sum += c.toInt()
+
+        return sum - prev[0] * 2
+    }
+}
