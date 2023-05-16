@@ -8,8 +8,4 @@ If you have a better solution for a problem, any optimization, another way of so
 
 I hope this repo will help you if you are looking for a specific solution to a problem in Kotlin.
 
-<div style="align-content: center">
-    <a href="https://leetcode.com/aliam">
-        <img src="https://leetcode.card.workers.dev/?username=aliam&theme=dark" alt="LeetCode Problem Rate"/>
-    </a>
-</div>
+![LeetCode Stats](https://leetcode.card.workers.dev/aliam?theme=unicorn&font=source_code_pro&extension=activity)
