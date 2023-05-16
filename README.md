@@ -4,4 +4,12 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 
 (Interesting problems found on Lintcode but not on Leetcode have its own folder)
 
-I hope this repo will help you if you are looking for a specific solution to a problem in Kotlin. If you have a better solution for a problem, any optimization, another way of solving it, etc,  and would like to help, please do suggest it in issues or do a pull request.
+If you have a better solution for a problem, any optimization, another way of solving it, etc, I would love to hear from you. Open a Issue or PR.
+
+I hope this repo will help you if you are looking for a specific solution to a problem in Kotlin.
+
+<div style="align-content: center">
+    <a href="https://leetcode.com/aliam">
+        <img src="https://leetcode.card.workers.dev/?username=aliam&theme=dark" alt="LeetCode Problem Rate"/>
+    </a>
+</div>
