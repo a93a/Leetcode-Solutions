@@ -8,4 +8,4 @@ If you have a better solution for a problem, any optimization, another way of so
 
 I hope this repo will help you if you are looking for a specific solution to a problem in Kotlin.
 
-![LeetCode Stats](https://leetcode.card.workers.dev/aliam?theme=unicorn&font=source_code_pro&extension=activity)
+![LeetCode Stats](https://leetcode.card.workers.dev/aliam?theme=unicorn&font=source_code_pro)
