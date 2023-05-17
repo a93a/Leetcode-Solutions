@@ -13,7 +13,7 @@ class Solution {
         var fast = head
         var prev: ListNode? = null
 
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next.next
             val temp = slow?.next
             slow?.next = prev
@@ -22,8 +22,11 @@ class Solution {
         }
 
         var res = 0
-        while(slow != null && prev != null) { // only need to check either if one of these != null, I check both for null safety warnings
-            res = maxOf(res, slow.value!! + prev.value!!)
+        while (slow != null && prev != null) {
+            res = maxOf(
+                res, 
+                (slow.value?: 0) + (prev.value?: 0)
+            )
             prev = prev.next
             slow = slow.next
         }
