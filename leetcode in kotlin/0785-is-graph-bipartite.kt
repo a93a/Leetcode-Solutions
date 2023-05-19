@@ -63,3 +63,48 @@ class Solution {
         return true
     }
 }
+
+/*
+* Union Find
+*/
+class Solution {
+
+    class DSU(val n: Int) {
+
+        val parent = IntArray(n) { it }
+        val rank = IntArray(n) { 1 }
+
+        fun find(x: Int): Int {
+            if (x != parent[x])
+                parent[x] = find(parent[x])
+            return parent[x]
+        }
+
+        fun union(x: Int, y: Int) {
+            val px = find(x)
+            val py = find(y)
+
+            if (rank[px] >= rank[py]) {
+                parent[py] = px
+                rank[px] += rank[py]
+            } else {
+                parent[px] = py
+                rank[py] += rank[px]
+            }
+        }
+    }
+
+    fun isBipartite(graph: Array<IntArray>): Boolean {
+        val dsu = DSU(graph.size)
+
+        for (i in 0 until graph.size) {
+            for (j in graph[i]) {
+                if (dsu.find(i) == dsu.find(j))
+                    return false
+                dsu.union(graph[i][0], j)
+            }
+        }
+
+        return true
+    }
+}
