@@ -1,15 +1,22 @@
 class Solution {
     fun twoSum(numbers: IntArray, target: Int): IntArray {
-        var left = 0; var right = numbers.size-1
-        while(left < right){
+        var left = 0
+        var right = numbers.lastIndex
+        val res = intArrayOf(-1, -1)
+
+        while (left < right) {
             val sum = numbers[left] + numbers[right]
-            if(sum > target)
+            if (sum > target) {
                 right--
-            else if(sum < target)
+            } else if (sum < target) {
                 left++
-            else
-                return intArrayOf(left+1,right+1)
+            } else {
+                res[0] = left + 1
+                res[1] = right + 1
+                break
+            }
         }
-        throw Exception("No Solution")
+        
+        return res
     }
 }
