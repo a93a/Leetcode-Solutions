@@ -1,6 +1,7 @@
 class Solution {
     fun shortestBridge(grid: Array<IntArray>): Int {
         val q = LinkedList<IntArray>()
+
         val dir = arrayOf(
             intArrayOf(1, 0),
             intArrayOf(-1, 0),
@@ -47,10 +48,6 @@ class Solution {
         with (q) {
             while (isNotEmpty()) {
                 val (i, j, len) = removeFirst()
-                if (grid[i][j] == 1)
-                    return len - 1
-                
-                grid[i][j] = -1
 
                 for (d in dir) {
                     val iN = i + d[0]
