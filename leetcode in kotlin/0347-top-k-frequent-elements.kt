@@ -1,25 +1,23 @@
-class Solution {
-    
-    //use a "bucket sort" (but indexes as count) and val == which elements that occurs "index" times
-    // Time complexity is O(n)
+class Solution {  
     fun topKFrequent(nums: IntArray, k: Int): IntArray {
-        val hm = HashMap<Int, Int>()
-        val bsa = MutableList<ArrayList<Int>>(nums.size+1){arrayListOf()} // 1 to n, inverted "bucket sorted array"
+        val count = HashMap<Int, Int>()
+        val bucket = MutableList<ArrayList<Int>> (nums.size+1) { arrayListOf() } 
         val res = ArrayList<Int>()
         
-        for(n in nums)
-            hm[n] = hm.getOrDefault(n, 0) + 1
+        for (n in nums)
+            count[n] = count.getOrDefault(n, 0) + 1
         
-        for((v,c) in hm)
-            bsa.get(c).add(v)
+        for ((value,cnt) in count)
+            bucket.get(cnt).add(value)
             
-        outerLoop@ for(i in bsa.size-1 downTo 1){
-            for(n in bsa.get(i)){
+        outer@ for (i in bucket.lastIndex downTo 1) {
+            for (n in bucket.get(i)) {
                 res.add(n)
-                if(res.size == k)
-                    break@outerLoop
+                if (res.size == k)
+                    break@outer
             }
         }
+
         return res.toIntArray()
     }
 }
