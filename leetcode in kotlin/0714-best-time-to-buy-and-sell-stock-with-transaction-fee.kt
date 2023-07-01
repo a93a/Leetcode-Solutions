@@ -1,7 +1,6 @@
 class Solution {
     fun maxProfit(prices: IntArray, fee: Int): Int {
         val dp = Array (2) {IntArray (prices.size) { -1 } }
-        var iter = 0
 
         fun dfs(i: Int, buy: Int): Int {
             if (i == prices.size) return 0
