@@ -1,29 +1,31 @@
 class Solution {
     fun canFinish(numCourses: Int, prerequisites: Array<IntArray>): Boolean {
-        val edges = Array<ArrayList<Int>>(numCourses) { ArrayList() }
-        val visited = BooleanArray(numCourses)
-        prerequisites.forEach{
+        val edges = Array<ArrayList<Int>> (numCourses) { ArrayList() }
+        val visit = HashSet<Int>()
+
+        prerequisites.forEach {
             val (a,b) = it
             edges[a].add(b)
         }
-        for(i in 0..edges.size-1){
-            if(dfs(i, visited, edges) == false)
-                return false
-        } 
-        return true
-    }
-    private fun dfs(course: Int, visited: BooleanArray, edges: Array<ArrayList<Int>>): Boolean{
-        if(visited[course]==true)   //cycle detection from Course A to B and B to A
-            return false
-        if(edges[course].size == 0)
+
+        fun dfs(i: Int): Boolean {
+            if (i in visit) return false
+            if (edges[i].size == 0) return true
+
+            visit.add(i)
+            edges[i].forEach {
+                if (!dfs(it)) return false
+            }
+
+            visit.remove(i)
+            edges[i].clear()
             return true
-        visited[course] = true
-        edges[course].forEach{
-            if(dfs(it, visited, edges) == false)
-                return false
         }
-        visited[course] = false
-        edges[course].clear()
+
+        for (i in 0..edges.size-1) {
+            if (!dfs(i)) return false
+        } 
+
         return true
     }
 }
