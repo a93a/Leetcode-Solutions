@@ -1,7 +1,3 @@
-// using HashMap with a doubly linked list
-// start of list == LRU
-// end of list == MRU
-// hashmap wity key -> Node
 class LRUCache(val capacity: Int) {
     
     val hm = HashMap<Int, Node>()
@@ -13,8 +9,7 @@ class LRUCache(val capacity: Int) {
         end.prev = start
     }
     
-    //remove from linkedlist
-    private fun remove(node: Node?){
+    private fun remove(node: Node?) {
         node?: return
         val prev = node.prev
         val next = node.next
@@ -22,8 +17,7 @@ class LRUCache(val capacity: Int) {
         next?.prev = prev
     }
     
-    //insert at end of linked list (MRU)
-    private fun insert(node: Node?){
+    private fun insert(node: Node?) {
         node?: return
         val prev = end.prev
         val next = end
@@ -33,7 +27,6 @@ class LRUCache(val capacity: Int) {
         node.prev = prev
     }
     
-    //key value of node if not null, and if not null, update node to MRU
     fun get(key: Int): Int {
         val node = hm.get(key)
         if(node != null){
@@ -44,7 +37,6 @@ class LRUCache(val capacity: Int) {
         return -1
     }
 
-    //Insert node and update MRU
     fun put(key: Int, value: Int) {
         val node = hm.get(key)
         if(node != null)
@@ -59,16 +51,9 @@ class LRUCache(val capacity: Int) {
         }
     }
     
-    data class Node(val key: Int, val value: Int){
+    data class Node(val key: Int, val value: Int) {
         var next: Node? = null
         var prev: Node? = null
     }
 
 }
-
-/**
- * Your LRUCache object will be instantiated and called as such:
- * var obj = LRUCache(capacity)
- * var param_1 = obj.get(key)
- * obj.put(key,value)
- */
