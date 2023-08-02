@@ -1,21 +1,25 @@
 class Solution {
     fun permute(nums: IntArray): List<List<Int>> {
         val res = ArrayList<ArrayList<Int>>()
-        permute(0, nums, res)
+
+        fun perm(i: Int) {
+            if (i == nums.size) {
+                res.add(nums.toCollection(ArrayList()))
+                return
+            }
+
+            for (j in i until nums.size) {
+                nums.swap(i, j)
+                perm(i + 1)
+                nums.swap(i, j)
+            }
+        }
+
+        perm(0)
         return res
     }
-    private fun permute(index: Int, nums: IntArray, res: ArrayList<ArrayList<Int>>){
-        if(index == nums.size)
-            res.add(nums.toCollection(ArrayList()))
-        for(i in index until nums.size){
-            nums.swap(index, i)
-            permute(index+1, nums, res)
-            nums.swap(index,i)
-        }
-    }
-    private fun IntArray.swap(i: Int, j: Int){
-        val temp = this[i]
-        this[i] = this[j]
-        this[j] = temp
+
+    fun IntArray.swap(i: Int, j: Int) {
+        this[i] = this[j].also { this[j] = this[i] }
     }
 }
