@@ -1,68 +1,73 @@
 //DP solution
 class Solution {
     fun updateMatrix(mat: Array<IntArray>): Array<IntArray> {
-        val dist = Array(mat.size){ IntArray(mat[0].size){ (mat.size * mat[0].size) } } //cant use Integer.MAX_VALUE, will use value outside of possible range of distance
-        for(i in 0 until mat.size){ //left and top
-            for(j in 0 until mat[0].size){
-                if(mat[i][j] == 0){
-                    dist[i][j] = 0
-                }else{
-                    if(i > 0)
-                        dist[i][j] = minOf(dist[i][j], dist[i-1][j] + 1)
-                    if(j > 0) 
-                        dist[i][j] = minOf(dist[i][j], dist[i][j-1] + 1)
+        val m = mat.size
+        val n = mat[0].size
+        val d = Array (m) { IntArray (n) { (m * n) } } 
+
+        for (i in 0 until m) {
+            for (j in 0 until n) {
+                if (mat[i][j] == 0) {
+                    d[i][j] = 0
+                } else {
+                    if (i > 0)
+                        d[i][j] = minOf(d[i][j], d[i - 1][j] + 1)
+                    if (j > 0) 
+                        d[i][j] = minOf(d[i][j], d[i][j - 1] + 1)
                 }
             }      
         }
-        for(i in mat.size-1 downTo 0){ // bottom and right
-            for(j in mat[0].size-1 downTo 0){
-                if(i < mat.size-1)
-                    dist[i][j] = minOf(dist[i][j], dist[i+1][j] + 1)
-                if(j < mat[0].size-1) 
-                    dist[i][j] = minOf(dist[i][j], dist[i][j+1] + 1)
+
+        for (i in m - 1 downTo 0) {
+            for (j in n - 1 downTo 0) {
+                if (i < m - 1)
+                    d[i][j] = minOf(d[i][j], d[i + 1][j] + 1)
+                if (j < n - 1) 
+                    d[i][j] = minOf(d[i][j], d[i][j + 1] + 1)
             }      
         }
-        return dist
+
+        return d
     } 
 }
-
 
 //BFS solution
 class Solution {
     fun updateMatrix(mat: Array<IntArray>): Array<IntArray> {
+        val m = mat.size
+        val n = mat[0].size
         val q = ArrayDeque<Pair<Int,Int>>()
         val direction = arrayOf(
-            intArrayOf(1,0),
-            intArrayOf(0,1),
-            intArrayOf(-1,0),
-            intArrayOf(0,-1))
-        for(i in 0..mat.size-1){
-            for(j in 0..mat[0].size-1){
-                if(mat[i][j] == 0) // BFS over "0"s
-                    q.add(Pair(i,j))
+            intArrayOf(1, 0),
+            intArrayOf(0 ,1),
+            intArrayOf(-1, 0),
+            intArrayOf(0, -1))
+
+        fun isValid(x: Int, y: Int) = x in (0 until m) && y in (0 until n)
+        
+        for (i in 0..mat.size-1) {
+            for (j in 0..mat[0].size-1) {
+                if (mat[i][j] == 0)
+                    q.add(i to j)
                 else
                     mat[i][j] = Integer.MAX_VALUE
             }      
         }
-        while(!q.isEmpty()){
+
+        while (q.isNotEmpty()) {
             val (x,y) = q.poll()
-            for(dir in direction){
-                val newX = x+dir[0]
-                val newY = y+dir[1]
-                if(isValid(newX,newY,mat)){
-                    if(mat[newX][newY] <= mat[x][y]+1) //if neighbour is not a unvisited "1"
+            for (dir in direction) {
+                val newX = x + dir[0]
+                val newY = y + dir[1]
+                if (isValid(newX, newY)) {
+                    if (mat[newX][newY] <= mat[x][y] + 1) 
                         continue
-                    //else
-                    mat[newX][newY] = mat[x][y]+1 // set the "1"s distance
-                    q.add(Pair(newX,newY))
-                }  
+                    mat[newX][newY] = mat[x][y] + 1 
+                    q.add(newX to newY)
+                }
             }
-        }    
+        }
+
         return mat
     } 
-    private fun isValid(
-        x: Int, 
-        y: Int, 
-        mat: Array<IntArray>
-    ) = x >= 0 && y >= 0 && x < mat.size && y < mat[0].size
 }
