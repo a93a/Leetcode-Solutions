@@ -1,29 +1,18 @@
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-
 //iterative version
 class Solution {
     fun preorderTraversal(root: TreeNode?): List<Int> {
         val res = ArrayList<Int>()
         val stack = Stack<TreeNode>()
                 
-        if(root != null) stack.push(root)
-        while(!stack.isEmpty()){
+        if (root != null) stack.push(root)
+        
+        while (!stack.isEmpty()) {
             
             val node = stack.pop()
             res.add(node.`val`)
             
-            if(node.right != null) stack.push(node.right)
-            if(node.left != null) stack.push(node.left)
-            
+            if (node.right != null) stack.push(node.right)
+            if (node.left != null) stack.push(node.left)  
         }
         
         return res
