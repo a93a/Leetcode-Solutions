@@ -1,3 +1,18 @@
+//DP time O(n^2) and space O(n)
+class Solution {
+    fun uniquePaths(m: Int, n: Int): Int {
+        var dp = IntArray (n) { 1 }
+
+        for (i in 1 until m) {
+            for (j in 1 until n) {
+                dp[j] += dp[j - 1]
+            }
+        }
+
+        return dp[n - 1]
+    }
+}
+
 // DP time O(n^2) and space O(n^2)
 class Solution {
     fun uniquePaths(m: Int, n: Int): Int {
