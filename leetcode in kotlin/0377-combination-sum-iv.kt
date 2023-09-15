@@ -1,3 +1,27 @@
+//dfs
+class Solution {
+    fun combinationSum4(nums: IntArray, target: Int): Int {
+        val dp = HashMap<Int, Int>()
+        
+        fun dfs(sum: Int): Int {
+            if (sum == target) return 1
+            if (sum in dp) return dp[sum]!!
+
+            var res = 0
+            for (num in nums) {
+                if (sum + num <= target)
+                    res += dfs(sum + num)
+            }
+
+            dp[sum] = res
+            return res
+        }
+
+        return dfs(0)
+    }
+}
+
+//dp
 class Solution {
     fun combinationSum4(nums: IntArray, target: Int): Int {
         val dp = IntArray(target + 1)
