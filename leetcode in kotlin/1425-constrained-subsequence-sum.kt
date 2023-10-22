@@ -1,3 +1,24 @@
+// Time O(nlogn) and space O(n) using max heap
+class Solution {
+    fun constrainedSubsetSum(nums: IntArray, k: Int): Int {
+        var res = nums[0]
+        val maxHeap = PriorityQueue<IntArray>() { a, b -> b[0] - a[0] }
+        maxHeap.add(intArrayOf(nums[0], 0))
+
+        for (i in 1 until nums.size) {
+            while (i - maxHeap.peek()[1] > k)
+                maxHeap.poll()
+
+            var curMax = maxOf(nums[i], nums[i] + maxHeap.peek()[0])
+            res = maxOf(res, curMax)
+            maxHeap.add(intArrayOf(curMax, i))
+        }
+
+        return res
+    }
+}
+
+// Time O(n) and space O(n) using monotonic array/list
 class Solution {
     fun constrainedSubsetSum(nums: IntArray, k: Int): Int {
         var win = LinkedList<Int>()
