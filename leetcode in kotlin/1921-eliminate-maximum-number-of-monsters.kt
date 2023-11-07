@@ -14,3 +14,13 @@ class Solution {
         return res
     }
 }
+
+// same solution but use more Kotlin API
+class Solution {
+    fun eliminateMaximum(dist: IntArray, speed: IntArray): Int = dist.zip(speed)
+            .map { Math.ceil(it.first.toDouble() / it.second).toInt() }
+            .sorted()
+            .withIndex()
+            .takeWhile { (minute, reachesAt) -> minute < reachesAt }
+            .count()
+}
