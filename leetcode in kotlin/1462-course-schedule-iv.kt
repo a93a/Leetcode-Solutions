@@ -1,30 +1,31 @@
 class Solution {
     fun checkIfPrerequisite(numCourses: Int, prerequisites: Array<IntArray>, queries: Array<IntArray>): List<Boolean> {
-        val adj = HashMap<Int, MutableList<Int>>().apply {
-            for ((u, v) in prerequisites)
-                this[v] = getOrDefault(v, mutableListOf<Int>()).apply { add(u) }
-        }
-
-        val preReqMap = HashMap<Int, HashSet<Int>>()
-
-        fun dfs(n: Int): HashSet<Int> {
-            if (n !in preReqMap) {
-                preReqMap[n] = HashSet<Int>()
-                adj[n]?.forEach { prereq ->
-                    preReqMap[n] = preReqMap[n]!! unionWith dfs(prereq)
-                }
-                preReqMap[n]!!.add(n)
+        val adj = mutableMapOf<Int, MutableList<Int>>().apply {
+            prerequisites.forEach { (prereq, course) ->
+                this.getOrPut(course) { mutableListOf() }.add(prereq)
             }
-            return preReqMap[n]!!
         }
 
-        for (n in 0 until numCourses)
-            dfs(n)
-            
-        var res = mutableListOf<Boolean>()
-        for ((u, v) in queries)
-            res.add(u in preReqMap[v]!!)
+        val preReqMap = mutableMapOf<Int, HashSet<Int>>()
 
+        fun dfs(course: Int): HashSet<Int> {
+            if (course !in preReqMap) {
+                preReqMap[course] = HashSet<Int>().apply { add(course) }
+                adj[course]?.forEach { prereq ->
+                    preReqMap[course] = (preReqMap[course] ?: hashSetOf()) unionWith dfs(prereq)
+                }
+            }
+            return preReqMap[course] ?: hashSetOf()
+        }
+
+        (0 until numCourses).forEach { dfs(it) }
+
+        var res = mutableListOf<Boolean>().apply {
+            queries.forEach { (prereq, course) ->
+                this.add(preReqMap[course]?.let { prereq in it } ?: false)
+            }
+        }
+        
         return res
     }
 
