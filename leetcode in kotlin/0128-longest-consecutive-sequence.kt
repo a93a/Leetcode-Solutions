@@ -1,7 +1,7 @@
 /*
 * Union Find solution
 */
-lass Solution {
+class Solution {
 
     class DSU(val n: Int) {
         val parent = IntArray(n) { it }
@@ -16,7 +16,7 @@ lass Solution {
         fun union(x: Int, y: Int) {
             val px = find(x)
             val py = find(y)
-            if(px != py) {
+            if (px != py) {
                 parent[py] = px
                 size[px] += size[py]
             }
@@ -40,8 +40,8 @@ lass Solution {
         for ((i,n) in nums.withIndex()) {
             if (n in hm) continue
 
-            hm[n - 1]?.let { dsu.union(i, hm[n - 1]!!) }
-            hm[n + 1]?.let { dsu.union(i, hm[n + 1]!!) }
+            hm[n - 1]?.let { dsu.union(i, it) }
+            hm[n + 1]?.let { dsu.union(i, it) }
 
             hm[n] = i
         }
