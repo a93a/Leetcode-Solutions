@@ -45,7 +45,7 @@ class Solution {
             else
                 dp[i] = dp[i + 1]
             
-            if (i + 1 < n && (s.substring(i, i + 2) in nums))
+            if (i + 1 < n && ((s[i].toString() + s[i + 1]) in nums))
                 dp[i] += dp[i + 2]
         }
 
