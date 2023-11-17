@@ -46,3 +46,34 @@ class Solution {
         return if (res == Integer.MAX_VALUE) -1 else res
     }
 }
+
+// Alternative solution
+class Solution {
+    fun minStickers(stickers: Array<String>, target: String): Int {
+        val n = target.length
+        val m = 1 shl n
+        val dp = IntArray (m) { Integer.MAX_VALUE }
+
+        dp[0] = 0
+        for (i in 0 until m) {
+            if (dp[i] == Integer.MAX_VALUE)
+                continue
+
+            for (s in stickers) {
+                var subset = i
+                for (c in s) {
+                    for (r in 0 until n) {
+                        if (target[r] == c && ((subset shr r) and 1) == 0) {
+                            subset = subset or (1 shl r)
+                            break
+                        }
+                    }
+                }
+
+                dp[subset] = minOf(dp[subset], dp[i] + 1)
+            }
+        }
+
+        return if (dp[m - 1] == Integer.MAX_VALUE) -1 else dp[m - 1]
+    }
+}
