@@ -23,8 +23,10 @@ class Solution {
 
 // or make use of kotlins functions
 class Solution {
+    val primes = setOf(2, 3, 5, 7, 11, 13, 17, 19)
+    
     fun countPrimeSetBits(left: Int, right: Int) = (left..right)
         .map { it.countOneBits() }
-        .filter { it in setOf(2, 3, 5, 7, 11, 13, 17, 19) }
+        .filter { it in primes }
         .count()
 }
