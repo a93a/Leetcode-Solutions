@@ -13,4 +13,4 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 
 ## Useful algorithms, Datastructuresm, Techniques, etc for competitive programming
 
-¤¤ Table of contents
+## Table of contents
