@@ -12,3 +12,5 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 [A List of Useful Equations in Competitive Programming](https://blog.shahjalalshohag.com/equation-list/)
 
 ## Useful algorithms, Datastructuresm, Techniques, etc for competitive programming
+
+¤¤ Table of contents
