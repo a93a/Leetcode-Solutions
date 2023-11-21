@@ -7,7 +7,7 @@ class Solution {
         nums.forEach { x ->
             val y = x - x.rev()
             res += count[y] ?: 0
-            res = res % mod
+            res %= mod
             count[y] = (count[y] ?: 0) + 1
         }
 
