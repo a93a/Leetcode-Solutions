@@ -15,3 +15,12 @@ class Solution {
         return res
     }
 }
+
+// less code with Kotlin functions
+class Solution {
+    fun checkArithmeticSubarrays(nums: IntArray, l: IntArray, r: IntArray) = l.zip(r)
+        .map { (i, j) ->
+            val list = nums.copyOfRange(i, j + 1).toList().sorted()
+            list.windowed(2).all { it[1] - it[0] == list[1] - list[0] }
+        }
+}
