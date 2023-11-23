@@ -7,10 +7,18 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 
 ***If you have a better solution for a problem, any optimization, another way of solving it, etc, I would love to hear from you. Open a Issue or PR.***
 
-## Useful Equations & Math for competitive programming
+## Useful algorithms, Datastructures, Math, Techniques, etc for competitive programming
 
+### Basics
+### Sorting
+### Graphs
+### Trees
+### Dynamic Programming
+### String
+### Datastructures
+### Bitwise operations
+### Techniques
+### Math
 [A List of Useful Equations in Competitive Programming](https://blog.shahjalalshohag.com/equation-list/)
-
-## Useful algorithms, Datastructuresm, Techniques, etc for competitive programming
-
-## Table of contents
+### Misc
+https://cp-algorithms.com/index.html
