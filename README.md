@@ -21,4 +21,4 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 ### Math
 [A List of Useful Equations in Competitive Programming](https://blog.shahjalalshohag.com/equation-list/)
 ### Misc
-https://cp-algorithms.com/index.html
+[List of all things useful](https://cp-algorithms.com/index.html)
