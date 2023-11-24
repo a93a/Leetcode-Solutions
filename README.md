@@ -11,6 +11,19 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 
 ### Basics
 ### Sorting
+
+- [Heap sort](https://en.wikipedia.org/wiki/Heapsort)
+- [Merge sort](https://en.wikipedia.org/wiki/Merge_sort)
+- [Quick sort](https://en.wikipedia.org/wiki/Quicksort)
+- [Quick select](https://en.wikipedia.org/wiki/Quickselect)
+- [Bucket sort](https://en.wikipedia.org/wiki/Bucket_sort)
+- [Counting sort](https://en.wikipedia.org/wiki/Counting_sort)
+- [Radix sort](https://en.wikipedia.org/wiki/Radix_sort)
+- [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)
+- [Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort)
+- [Selection sort](https://en.wikipedia.org/wiki/Selection_sort)
+- [Shell sort](https://en.wikipedia.org/wiki/Shellsort)
+
 ### Graphs
 ### Trees
 ### Dynamic Programming
