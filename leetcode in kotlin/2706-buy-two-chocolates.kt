@@ -1,28 +1,18 @@
 class Solution {
     fun buyChoco(prices: IntArray, money: Int): Int {
-        var cost = 0
-        var min = Integer.MAX_VALUE
-        var minIdx = -1
-        
-        for (i in prices.indices) {
-            if (prices[i] < min) {
-                min = prices[i]
-                minIdx = i
+        var min1 = Integer.MAX_VALUE
+        var min2 = Integer.MAX_VALUE
+
+        for (p in prices) {
+            if (p < min1) {
+                min2 = min1
+                min1 = p
+            } else {
+                min2 = minOf(min2, p)
             }
         }
-            
-            
-        cost += min
-        
-        min = Integer.MAX_VALUE
-        for (i in prices.indices) {
-            if (prices[i] < min && i != minIdx) {
-                min = minOf(min, prices[i])
-            }
-        }
-        
-        cost += min
-                
-        return if (cost <= money) money - cost else money
+
+        val left = money - (min1 + min2)
+        return if (left >= 0) left else money
     }
 }
