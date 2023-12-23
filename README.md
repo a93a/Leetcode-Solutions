@@ -30,10 +30,16 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 ### String
 ### Datastructures
 ### Bitwise operations
+
 [Bit Twiddling Hacks by Sean Eron Anderson (stanford)](https://graphics.stanford.edu/~seander/bithacks.html)
+
 [Hacker’s Delight](https://www.oreilly.com/library/view/hackers-delight-second/9780133084993/)
+
 ### Techniques
 ### Math
+
 [A List of Useful Equations in Competitive Programming](https://blog.shahjalalshohag.com/equation-list/)
+
 ### Misc
+
 [List of all things useful](https://cp-algorithms.com/index.html)
