@@ -1,3 +1,25 @@
+// dp, space complexity down from O(n * t) down to O(t)
+class Solution {
+    fun numRollsToTarget(n: Int, k: Int, t: Int): Int {
+        val mod = 1_000_000_007
+        var dp = LongArray (t + 1)
+
+        dp[0] = 1
+
+        for (d in 0 until n) {
+            val nextDp = LongArray (t + 1)
+            for (m in 1..k) {
+                for (s in m..t)
+                    nextDp[s] = (nextDp[s] + dp[s - m]) % mod
+            }
+            dp = nextDp
+        }
+        
+        return dp[t].toInt()
+    }
+}
+
+// recursion + memo
 class Solution {
     fun numRollsToTarget(n: Int, k: Int, t: Int): Int {
         val mod = 1_000_000_007
