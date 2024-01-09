@@ -35,8 +35,7 @@ class Solution {
 
 // knacksack DP
 class Solution {
-    fun maximizeTheProfit(n: Int, offers: List<List<Int>>): Int {
-        val o = offers.sortedWith(compareBy({it[0]}, {it[1]}))
+    fun maximizeTheProfit(n: Int, o: List<List<Int>>): Int {
         val dp = IntArray (n + 1)
         val map: MutableMap<Int, MutableList<Pair<Int, Int>>> = mutableMapOf()
 
