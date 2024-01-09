@@ -33,7 +33,7 @@ class Solution {
     }
 }
 
-// knacksack DP
+// Sort + knacksack DP
 class Solution {
     fun maxTaxiEarnings(n: Int, rides: Array<IntArray>): Long {
         val rd = rides.sortedWith(compareBy({ it[0] }, { it[1] }))
@@ -55,5 +55,31 @@ class Solution {
 
         
         return dp[n]
+    }
+}
+
+// DP O(m + n)
+class Solution {
+    fun maxTaxiEarnings(n: Int, r: Array<IntArray>): Long {
+        val dp = LongArray (n + 1)
+        val map: MutableMap<Int, MutableList<Pair<Int, Int>>> = mutableMapOf()
+
+        for ((s, e, t) in r)
+            map.getOrPut(s) { mutableListOf() }.apply { add(e to (e - s + t)) }
+
+        for (i in n - 1 downTo 1) {
+            map[i]?.forEach { (e, d) ->
+                dp[i] = maxOf(
+                    dp[i],
+                    dp[e] + d
+                )
+            }
+            dp[i] = maxOf(
+                dp[i],
+                dp[i + 1]
+            )
+        }
+
+        return dp[1]
     }
 }
