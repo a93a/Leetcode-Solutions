@@ -1,3 +1,4 @@
+// Sort + recursion & memoization + binary search
 class Solution {
     fun maxTaxiEarnings(n: Int, rides: Array<IntArray>): Long {
         val rd = rides.sortedWith(compareBy({ it[0] }, { it[1] }))
@@ -29,5 +30,30 @@ class Solution {
         }
 
         return dfs(0)
+    }
+}
+
+// knacksack DP
+class Solution {
+    fun maxTaxiEarnings(n: Int, rides: Array<IntArray>): Long {
+        val rd = rides.sortedWith(compareBy({ it[0] }, { it[1] }))
+        val dp = LongArray (n + 1)
+        var j = 0
+        for (i in 1..n) {
+            dp[i] = maxOf(
+                dp[i], 
+                dp[i - 1]
+            )
+            while (j < rd.size && rd[j][0] == i) {
+                dp[rd[j][1]] = maxOf(
+                    dp[rd[j][1]],
+                    dp[i] + rd[j][1] - rd[j][0] + rd[j][2]
+                )
+                j++
+            }
+        }
+
+        
+        return dp[n]
     }
 }
