@@ -32,3 +32,27 @@ class Solution {
         return dfs(0)
     }
 }
+
+// knacksack DP
+class Solution {
+    fun maximizeTheProfit(n: Int, offers: List<List<Int>>): Int {
+        val o = offers.sortedWith(compareBy({it[0]}, {it[1]}))
+        val dp = IntArray (n + 1)
+        val map: MutableMap<Int, MutableList<Pair<Int, Int>>> = mutableMapOf()
+
+        for ((s, e, p) in o)
+            map.getOrPut(e) { mutableListOf() }.apply { add(s to p) }
+        
+        for (i in 0 until n) {
+            dp[i + 1] = dp[i]
+            map[i]?.forEach { (s, p) ->
+                dp[i + 1] = maxOf(
+                    dp[i + 1],
+                    dp[s] + p
+                )
+            }
+        }
+       
+        return dp[n]
+    }
+}
