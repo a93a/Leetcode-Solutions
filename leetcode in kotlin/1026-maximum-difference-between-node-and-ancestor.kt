@@ -1,24 +1,18 @@
 class Solution {
     fun maxAncestorDiff(root: TreeNode?): Int {
-        var res = -1
 
-        fun dfs(root: TreeNode?, max: Int, min: Int) {
-            root?: return
+        fun dfs(root: TreeNode?, max: Int, min: Int): Int {
+            root?: return max - min
 
             val newMax = maxOf(max, root.`val`)
             val newMin = minOf(min, root.`val`)
 
-            res = maxOf(
-                res,
-                Math.abs(newMax - newMin),
-                Math.abs(newMin - newMax)
-            )
-
-            dfs(root.left, newMax, newMin)
-            dfs(root.right, newMax, newMin)
+            return maxOf(
+                dfs(root.left, newMax, newMin),
+                dfs(root.right, newMax, newMin)
+            )         
         }
 
-        dfs(root, Integer.MIN_VALUE, Integer.MAX_VALUE)
-        return res
+        return dfs(root, Integer.MIN_VALUE, Integer.MAX_VALUE)
     }
 }
