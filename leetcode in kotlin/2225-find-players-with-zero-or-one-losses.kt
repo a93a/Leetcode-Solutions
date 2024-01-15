@@ -60,3 +60,30 @@ class Solution {
         return res
     }
 }
+
+// Above solution but optimized from O(2 * n) down to O(n)
+class Solution {
+    fun findWinners(matches: Array<IntArray>): List<List<Int>> {
+        val scores = IntArray (100001)
+
+        for ((w, l) in matches) {
+            if (scores[l] < 0) scores[l]--
+            if (scores[l] >= 0) scores[l] = -1
+            if (scores[w] >= 0) scores[w] = 1
+        }
+
+        var res = listOf(
+            mutableListOf<Int>(),
+            mutableListOf<Int>()
+        )
+
+        for (i in 1..100000) {
+            if (scores[i] == 1)
+                res[0].add(i)
+            else if (scores[i] == -1)
+                res[1].add(i)
+        }
+
+        return res
+    }
+}
