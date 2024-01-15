@@ -33,3 +33,30 @@ class Solution {
         )
     }
 }
+
+// DIY logic Optimized time O(n) and space O(n), without kotlin stuff
+class Solution {
+    fun findWinners(matches: Array<IntArray>): List<List<Int>> {
+        val winners = IntArray (100001)
+        val losers = IntArray (100001)
+
+        for ((w, l) in matches) {
+            winners[w]++
+            losers[l]++
+        }
+
+        var res = listOf(
+            mutableListOf<Int>(),
+            mutableListOf<Int>()
+        )
+
+        for (i in 1..100000) {
+            if (winners[i] != 0 && losers[i] == 0)
+                res[0].add(i)
+            else if (losers[i] == 1)
+                res[1].add(i)
+        }
+
+        return res
+    }
+}
