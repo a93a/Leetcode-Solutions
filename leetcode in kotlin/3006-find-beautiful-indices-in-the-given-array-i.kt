@@ -15,14 +15,12 @@ class Solution {
         }
 
         val res = mutableListOf<Int>()
-        val added = hashSetOf<Int>()
-        for (i in AS) {
-            for (j in BS) {
-                if (Math.abs(j - i) <= k && i !in added) {
-                    res.add(i)
-                    added.add(i)
-                }
-            }
+        var j = 0
+        for (i in AS.indices) {
+            while (j < BS.size && AS[i] > k + BS[j])
+                j++
+            if (j < BS.size && Math.abs(AS[i] - BS[j]) <= k)
+                res.add(AS[i])
         }
 
         return res
