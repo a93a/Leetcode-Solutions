@@ -1,3 +1,42 @@
+// If you are not allowed to use HashSet.random()
+class RandomizedSet() {
+
+    val nums = ArrayList<Int>()
+    val map = HashMap<Int, Int>()
+
+    fun insert(`val`: Int): Boolean {
+        if (`val` in map) return false
+
+        nums.add(`val`)
+        map[`val`] = nums.lastIndex
+        return true
+    }
+
+    fun remove(`val`: Int): Boolean {
+        if (`val` !in map) return false
+
+        val lastIdx = nums.lastIndex
+        val last = nums[lastIdx]
+        val removeIdx = map[`val`]!!
+
+        nums[lastIdx] = nums[removeIdx].also { 
+            nums[removeIdx] = nums[lastIdx]
+        }
+
+        map[last] = removeIdx
+        nums.removeLast()
+        map.remove(`val`)
+
+        return true
+    }
+
+    fun getRandom(): Int {
+        val i = (0..nums.lastIndex).random()
+        return nums[i]
+    }
+
+}
+
 /*
 * Containing the logic behind the operations, but a cleaner Kotlin solution is provided below.
 * Here implement some of the logic of the functions ourselves, as in the video, to have this solution compatible with the video solution.
