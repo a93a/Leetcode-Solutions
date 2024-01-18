@@ -52,3 +52,27 @@ class Solution {
         return dp[0]
     }
 }
+
+// DP Time O(n) and space O(1)
+class Solution {
+    fun numDecodings(s: String): Int {
+        val n = s.length
+        val nums = HashSet<String>().apply {
+            (1..26).forEach { add(it.toString()) }
+        }
+        
+        var dp1 = 1
+        var dp2 = 0
+        for (i in (n - 1) downTo 0) {
+            var dp = if (s[i] == '0') 0 else dp1
+            
+            if (i + 1 < n && ((s[i].toString() + s[i + 1]) in nums))
+                dp += dp2
+
+            dp2 = dp1
+            dp1 = dp
+        }
+
+        return dp1
+    }
+}
