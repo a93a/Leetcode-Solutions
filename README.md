@@ -10,6 +10,9 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 ## Useful algorithms, Datastructures, Math, Techniques, etc for competitive programming
 
 ### Basics
+- [Recursion](https://en.wikipedia.org/wiki/Recursion)
+- [Linear search](https://en.wikipedia.org/wiki/Linear_search)
+- [Binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm)
 
 ### Sorting
 
@@ -56,11 +59,19 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 - [Suffix Tree](https://en.wikipedia.org/wiki/Suffix_tree)
 
 ### Dynamic Programming
+- [Knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem)
+- [Longest increasing subsequence](https://en.wikipedia.org/wiki/Longest_increasing_subsequence)
+- [Longest common subsequence](https://en.wikipedia.org/wiki/Longest_common_subsequence)
+- [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+- [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance)
 
 ### String
 - [Knuth–Morris–Pratt algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
 - [Rabin–Karp algorithm](https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm)
 - [Boyer–Moore string-search algorithm](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm)
+- [Aho–Corasick algorithm](https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm)
+- [Z algorithm](https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/)
+- [Suffix array](https://en.wikipedia.org/wiki/Suffix_array)
 
 ### Datastructures
 - [Linked list](https://en.wikipedia.org/wiki/Linked_list)
@@ -88,14 +99,18 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 - [All combinations of a given set]()
 - [Prefix sum / Suffix sum](https://en.wikipedia.org/wiki/Prefix_sum)
 - [Greedy algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)
+- [Sliding window](https://www.geeksforgeeks.org/window-sliding-technique/)
+- [Memoization](https://en.wikipedia.org/wiki/Memoization)
 
 ### Math
 
 - [A List of Useful Equations in Competitive Programming](https://blog.shahjalalshohag.com/equation-list/)
-- [List of Data Structure and Algorithm](https://jojozhuang.github.io/)
-- [List of Data Structure and Algorithm 2](https://labuladong.gitbook.io/algo-en/)
-- [Usaco guide, curated list of techniques](https://usaco.guide/general/using-this-guide?lang=cpp)
 
 ### Misc
 
-- [List of all things useful](https://cp-algorithms.com/index.html)
+- [Algorithms for Competitive Programming](https://cp-algorithms.com/)
+- [List of Data Structure and Algorithm](https://jojozhuang.github.io/)
+- [List of Data Structure and Algorithm 2](https://labuladong.gitbook.io/algo-en/)
+- [Usaco guide, curated list of techniques](https://usaco.guide/general/using-this-guide?lang=cpp)
+- [Top Algorithms and Data Structures for Competitive Programming](https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/)
+
