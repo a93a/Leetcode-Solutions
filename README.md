@@ -44,16 +44,16 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 - [Hungarian algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm)
 
 ### Trees
-[Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
-[Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree)
-[Red–black tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
-[Trie](https://en.wikipedia.org/wiki/Trie)
-[Segment tree](https://en.wikipedia.org/wiki/Segment_tree)
-[Fenwick tree](https://en.wikipedia.org/wiki/Fenwick_tree)
-[m-ary tree](https://en.wikipedia.org/wiki/M-ary_tree)
-[B-tree](https://en.wikipedia.org/wiki/B-tree)
-[Heap](https://en.wikipedia.org/wiki/Heap_(data_structure))
-[Suffix Tree](https://en.wikipedia.org/wiki/Suffix_tree)
+- [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
+- [Binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree)
+- [Red–black tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
+- [Trie](https://en.wikipedia.org/wiki/Trie)
+- [Segment tree](https://en.wikipedia.org/wiki/Segment_tree)
+- [Fenwick tree](https://en.wikipedia.org/wiki/Fenwick_tree)
+- [m-ary tree](https://en.wikipedia.org/wiki/M-ary_tree)
+- [B-tree](https://en.wikipedia.org/wiki/B-tree)
+- [Heap](https://en.wikipedia.org/wiki/Heap_(data_structure))
+- [Suffix Tree](https://en.wikipedia.org/wiki/Suffix_tree)
 
 ### Dynamic Programming
 
