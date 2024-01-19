@@ -87,6 +87,7 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 - [All subsets of a given set](https://www.geeksforgeeks.org/backtracking-to-find-all-subsets/)
 - [All combinations of a given set]()
 - [Prefix sum / Suffix sum](https://en.wikipedia.org/wiki/Prefix_sum)
+- [Greedy algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)
 
 ### Math
 
