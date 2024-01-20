@@ -11,3 +11,17 @@ class Solution {
         }
     }
 }
+
+// or
+class Solution {
+    fun toHex(num: Int) = buildString {
+        if (num == 0) return "0"
+
+        val map = "0123456789abcdef"
+        var n = num
+        while (n != 0) {
+            insert(0, map[n and 0xF])
+            n = n ushr 4
+        }
+    }
+}
