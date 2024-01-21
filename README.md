@@ -5,6 +5,8 @@ A collection of solutions to Leetcode problems, all in Kotlin language. Mix of E
 
 (Interesting problems found on Lintcode but not on Leetcode have its own folder)
 
+I have also started adding resources and templates below, for all things important in Algorithms, Datastructures and Competitve Programming,
+
 ***If you have a better solution for a problem, any optimization, another way of solving it, etc, I would love to hear from you. Open a Issue or PR.***
 
 ## Useful algorithms, Datastructures, Math, Techniques, etc for competitive programming
