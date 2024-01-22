@@ -54,7 +54,7 @@ I have also started adding resources and templates below, for all things importa
 - [Red–black tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
 - [Trie](https://en.wikipedia.org/wiki/Trie)
 - [Segment tree](https://en.wikipedia.org/wiki/Segment_tree)
-- [Fenwick tree](https://en.wikipedia.org/wiki/Fenwick_tree)
+- [Fenwick tree / Binary Indexed Tree (BIT)](https://en.wikipedia.org/wiki/Fenwick_tree)
 - [m-ary tree](https://en.wikipedia.org/wiki/M-ary_tree)
 - [B-tree](https://en.wikipedia.org/wiki/B-tree)
 - [Heap](https://en.wikipedia.org/wiki/Heap_(data_structure))
