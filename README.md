@@ -103,6 +103,8 @@ I have also started adding resources and templates below, for all things importa
 - [Greedy algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)
 - [Sliding window](https://www.geeksforgeeks.org/window-sliding-technique/)
 - [Memoization](https://en.wikipedia.org/wiki/Memoization)
+- [Digit DP](https://www.geeksforgeeks.org/digit-dp-introduction/)
+
 
 ### Math
 
