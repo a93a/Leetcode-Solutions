@@ -2,13 +2,8 @@
 class NumArray(val nums: IntArray) {
 
     val n = nums.size
-    val tree = FenwickTree (n)
+    val tree = FenwickTree (nums)
     
-    init {
-        for (i in nums.indices)
-            tree.update(i + 1, nums[i])
-    }
-
     fun update(index: Int, value: Int) {
         val diff = value - nums[index]
         tree.update(index + 1, diff)
@@ -18,14 +13,20 @@ class NumArray(val nums: IntArray) {
     fun sumRange(left: Int, right: Int): Int {
         return tree.rangeTo(right + 1) - tree.rangeTo(left)
     }
-
 }
 
-class FenwickTree(private val size: Int) {
-    val arr = IntArray (size + 1)
+class FenwickTree(val values: IntArray) {
+
+    val arr = IntArray (values.size + 1)
 
     fun range(a: Int, b: Int): Int {
         return rangeTo(b) - rangeTo(a - 1)
+    }
+
+    init {
+        values.forEachIndexed { i, value ->
+            update(i + 1, value)
+        }
     }
 
     fun rangeTo(i: Int): Int {
