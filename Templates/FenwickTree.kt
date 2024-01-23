@@ -1,8 +1,15 @@
-class FenwickTree(private val size: Int) {
-    val arr = IntArray (size + 1)
+class FenwickTree(val values: IntArray) {
+
+    val arr = IntArray (values.size + 1)
 
     fun range(a: Int, b: Int): Int {
         return rangeTo(b) - rangeTo(a - 1)
+    }
+
+    init {
+        values.forEachIndexed { i, value ->
+            update(i + 1, value)
+        }
     }
 
     fun rangeTo(i: Int): Int {
