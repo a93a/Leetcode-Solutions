@@ -1,10 +1,6 @@
 class FenwickTree(val values: IntArray) {
-
     val arr = IntArray (values.size + 1)
-
-    fun range(a: Int, b: Int): Int {
-        return rangeTo(b) - rangeTo(a - 1)
-    }
+    val size = values.size
 
     init {
         values.forEachIndexed { i, value ->
@@ -12,7 +8,11 @@ class FenwickTree(val values: IntArray) {
         }
     }
 
-    fun rangeTo(i: Int): Int {
+    fun range(a: Int, b: Int): Int {
+        return range(b) - range(a - 1)
+    }
+
+    fun range(i: Int): Int {
         var sum = 0
         var i = i
         
@@ -38,9 +38,9 @@ class FenwickTree(val values: IntArray) {
         var s = 0
 
         for (i in n downTo 0) {
-            if (pos + (1 shl i) < size && s + nums[pos + (1 shl i)] <= v) {
+            if (pos + (1 shl i) < size && s + arr[pos + (1 shl i)] <= v) {
                 pos += 1 shl i
-                s += nums[pos]
+                s += arr[pos]
             }
         }
         return pos + 1
