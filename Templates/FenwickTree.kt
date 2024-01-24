@@ -31,4 +31,28 @@ class FenwickTree(val values: IntArray) {
             ind += ind and (-ind)
         }
     }
+
+    fun upperBound(v: Int): Int {
+        val n = getLog2(size)
+        var pos = 0
+        var s = 0
+
+        for (i in n downTo 0) {
+            if (pos + (1 shl i) < size && s + nums[pos + (1 shl i)] <= v) {
+                pos += 1 shl i
+                s += nums[pos]
+            }
+        }
+        return pos + 1
+    }
+
+    private fun getLog2(x: Int): Int {
+        var x = x
+        var res = 0
+        while (x > 0) {
+            res++
+            x = x shr 1
+        }
+        return res
+    }
 }
