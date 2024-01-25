@@ -64,6 +64,7 @@ I have also started adding resources and templates below, for all things importa
 - [Knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem)
 - [Longest increasing subsequence](https://en.wikipedia.org/wiki/Longest_increasing_subsequence)
 - [Longest common subsequence](https://en.wikipedia.org/wiki/Longest_common_subsequence)
+- [A very good guide on LCS from brute to optimizations](https://ics.uci.edu/~eppstein/161/960229.html)
 - [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
 - [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance)
 
