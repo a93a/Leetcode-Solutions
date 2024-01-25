@@ -1,3 +1,18 @@
+// Using a set
+class LUPrefix(n: Int) {
+    val set = HashSet<Int>()
+    var longest = 0
+
+    fun upload(video: Int) {
+        set.add(video)
+
+        while (longest + 1 in set)
+            longest++
+    }
+
+    fun longest() = longest
+}
+
 // Using fenwick tree
 class LUPrefix(n: Int) {
     val tree = FenwickTree (IntArray (100001))
