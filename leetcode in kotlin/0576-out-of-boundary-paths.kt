@@ -35,7 +35,6 @@ class Solution {
         for (k in 1..maxMove) {
             for (i in m - 1 downTo 0) {
                 for (j in n - 1 downTo 0) {
-                    dp[i][j][k] = 0
                     for (dir in 0..3) {
                         val i2 = i + dirs[dir]
                         val j2 = j + dirs[dir + 1]
