@@ -1,15 +1,13 @@
 class Solution {
     fun maximumLength(nums: IntArray): Int {
         val nums = nums.map { it.toDouble() }
-        val count = nums
-            .toList()
-            .groupingBy { it }
-            .eachCount()
-            .toMutableMap()
+        val count = HashMap<Double, Int>()
+
+        for (n in nums)
+            count[n] = (count[n] ?: 0) + 1
         
         var res = 1
         for (n in nums) {
-
             if (n == 1.0) {
                 if ((count[n] ?: 0) % 2 == 0)
                     count[n] = (count[n] ?: 0) - 1
