@@ -8,3 +8,8 @@ class Solution {
         return nEven * mOdd + nOdd * mEven
     }
 }
+
+// ...reduced down to...
+class Solution {
+    fun flowerGame(n: Int, m: Int) = m.toLong() * n / 2
+}
