@@ -52,3 +52,34 @@ class Solution {
         return dfs(root)
     }
 }
+
+/* 
+ * Iterative solution (DFS) provided by User https://github.com/AnatolySAV
+ */
+ class Solution {
+    fun pseudoPalindromicPaths(root: TreeNode?): Int {
+        var rez = 0
+        var map = 0
+        val stack = Stack<Pair<TreeNode?,Int>>()
+        stack.push(Pair(root,0))
+
+        while (stack.isNotEmpty()) {
+            val st = stack.pop()
+            val node = st.first
+            val num = node!!.`val`
+            map = st.second xor (1 shl (num-1))
+            
+            if (node.left==null && node.right==null && (map and -map)==map) {
+                rez++
+            }
+            if (node.left!=null) {
+                stack.push(Pair(node.left,map))
+            }
+            if (node.right!=null) {
+                stack.push(Pair(node.right,map))
+            }
+        }
+
+        return rez
+    }
+}
