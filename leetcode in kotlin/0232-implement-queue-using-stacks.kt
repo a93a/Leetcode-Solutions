@@ -1,41 +1,31 @@
 class MyQueue() {
     
-    val input = Stack<Int>()
-    val output = Stack<Int>()
+    val input = LinkedList<Int>()
+    val output = LinkedList<Int>()
 
     fun push(x: Int) {
-        input.push(x)
+        input.addLast(x)
     }
 
     fun pop(): Int {
-        if(output.isEmpty()){
-            repeat(input.size){
-                output.push(input.pop())
-            }
+        if (output.isEmpty() ){
+            refill()
         } 
-        return output.pop()
+        return output.removeLast()
     }
 
     fun peek(): Int {
         if(output.isEmpty()){
-            repeat(input.size){
-                output.push(input.pop())
-            }
+            refill()
         } 
-        return output.peek()
+        return output.peekLast()
     }
 
-    fun empty(): Boolean {
-        return input.isEmpty() && output.isEmpty()
+    private fun refill() {
+        while (input.isNotEmpty())
+            output.addLast(input.removeLast())
     }
+
+    fun empty() = input.isEmpty() && output.isEmpty()
 
 }
-
-/**
- * Your MyQueue object will be instantiated and called as such:
- * var obj = MyQueue()
- * obj.push(x)
- * var param_2 = obj.pop()
- * var param_3 = obj.peek()
- * var param_4 = obj.empty()
- */
