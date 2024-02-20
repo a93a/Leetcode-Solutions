@@ -8,7 +8,6 @@ class Solution {
     }
 }
 
-/*
 //another solution using xor
 class Solution {
     fun missingNumber(nums: IntArray): Int {
@@ -19,4 +18,12 @@ class Solution {
         return amount
     }
 }
-*/
+
+// Use reduce
+class Solution {
+    fun missingNumber(nums: IntArray): Int {
+        var sum = (0..nums.size).reduce { a, v -> a + v }
+        var sum2 = nums.sum() ?: 0
+       return sum - sum2
+    }
+}
