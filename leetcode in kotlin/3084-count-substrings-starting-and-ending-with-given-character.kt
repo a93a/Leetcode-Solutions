@@ -3,7 +3,7 @@ class Solution {
         val n = s.length
         var count = 0
 
-        for (i in (n - 1) downTo 0) {
+        for (i in s.indices) {
             if (s[i] == c)
                 count++
         }
