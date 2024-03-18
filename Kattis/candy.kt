@@ -29,4 +29,3 @@ fun main(args: Array<String>) {
     val res = dfs(0, 0, 0L)
     println(if (res == MAX) "NO" else res)
 }
-
