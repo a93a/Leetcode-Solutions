@@ -36,7 +36,7 @@ class Solution {
             }
             
             if (res == -1) piles.add(num)
-            else piles[l] = num
+            else piles[res] = num
         }
 
         return piles.size
