@@ -33,3 +33,25 @@ class Solution {
         return time          
     }
 }
+
+// Count frequency and count amount of cycles needed
+class Solution {
+    fun leastInterval(tasks: CharArray, n: Int): Int {
+        val freq = IntArray (26)
+        var max = 0
+        var count = 0
+        for (c in tasks) {
+            freq[c - 'A']++
+            if (freq[c - 'A'] == max) {
+                count++
+            } else if (freq[c - 'A'] > max) {
+                max = freq[c - 'A']
+                count = 1
+            }
+        }
+
+        println(max)
+        println(count)
+        return maxOf(tasks.size, count + (n + 1) * (max - 1))
+    }
+}
