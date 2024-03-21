@@ -10,17 +10,12 @@ class Solution {
     fun Int.enc(): Int {
         var x = this
         var max = -1
-        var count = 0
+        var res = 0
         while (x > 0) {
             max = maxOf(max, x % 10)
-            count++
+            res = res * 10 + 1
             x /= 10
         }
-        var res = 0
-        repeat (count) {
-            res *= 10
-            res += max
-        }
-        return res
+        return res * max
     }
 }
