@@ -10,7 +10,6 @@ class Solution {
             sum += x
             min.add(intArrayOf(x, i))
         }
-        val orgSum = sum
 
         var r = 0
         q.forEach { (i, k) ->
