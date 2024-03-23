@@ -118,4 +118,4 @@ I have also started adding resources and templates below, for all things importa
 - [List of Data Structure and Algorithm 2](https://labuladong.gitbook.io/algo-en/)
 - [Usaco guide, curated list of techniques](https://usaco.guide/general/using-this-guide?lang=cpp)
 - [Top Algorithms and Data Structures for Competitive Programming](https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/)
-
+- [KTH's ICPC team reference document](https://github.com/kth-competitive-programming/kactl/tree/main)
