@@ -1,20 +1,20 @@
 class Solution {
     fun firstMissingPositive(nums: IntArray): Int {
+        val n = nums.size
         var i = 0
-        // if we encounter a valid integer, swap it into its right place. Ignore all numbers larger than nums.length
-        while(i < nums.size) {
-            val pos = nums[i] - 1
-            if(pos in (0 until nums.size) && nums[i] != nums[pos]) nums.swap(i, pos)
-            else i++
+        while (i < n) {
+            val j = nums[i] - 1
+            if (j in (0 until n) && nums[i] != nums[j]) {
+                nums[i] = nums[j].also { nums[j] = nums[i] }
+            } else {
+                i++
+            }
         }
 
-        //if the expected number is not in its right place, return it
-        for(i in nums.indices){
+        for (i in nums.indices) {
             if (nums[i] != i + 1) return i + 1
         }
-        return nums.size + 1
-    }
-    private fun IntArray.swap(i: Int, j: Int) {
-        this[i] = this[j].also{ this[j] = this[i]}
+
+        return n + 1
     }
 }
