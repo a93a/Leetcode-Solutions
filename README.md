@@ -29,6 +29,7 @@ I have also started adding resources and templates below, for all things importa
 - [Bubble sort](https://en.wikipedia.org/wiki/Bubble_sort)
 - [Selection sort](https://en.wikipedia.org/wiki/Selection_sort)
 - [Shell sort](https://en.wikipedia.org/wiki/Shellsort)
+- [Cycle sort](https://en.wikipedia.org/wiki/Cycle_sort)
 
 ### Graphs
 - [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
