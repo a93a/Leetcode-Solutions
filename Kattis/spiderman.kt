@@ -8,24 +8,26 @@ fun main(args: Array<String>) {
         val dp = Array (m + 1) { IntArray (1001) { -1 } }
         val dir = Array (m + 1) { IntArray (1001) }
 
-        dp[m][0] = 0
-        for (i in (m - 1) downTo 0) {
-            for (h in 0..1000) {
-                var res = -1
+        if (dist.sum()!! % 2 != 1) {
+            dp[m][0] = 0
+            for (i in (m - 1) downTo 0) {
+                for (h in 0..1000) {
+                    var res = -1
 
-                if (h + dist[i] < 1001 && dp[i + 1][h + dist[i]] != -1) {
-                    res = maxOf(h, dp[i + 1][h + dist[i]])
-                    dir[i][h] = 1
-                }
-
-                if (h - dist[i] >= 0 && dp[i + 1][h - dist[i]] != -1) {
-                    if (res == -1 || res > dp[i + 1][h - dist[i]]) {
-                        res = maxOf(h, dp[i + 1][h - dist[i]])
-                        dir[i][h] = -1
+                    if (h + dist[i] < 1001 && dp[i + 1][h + dist[i]] != -1) {
+                        res = maxOf(h, dp[i + 1][h + dist[i]])
+                        dir[i][h] = 1
                     }
-                }
 
-                dp[i][h] = res
+                    if (h - dist[i] >= 0 && dp[i + 1][h - dist[i]] != -1) {
+                        if (res == -1 || res > dp[i + 1][h - dist[i]]) {
+                            res = maxOf(h, dp[i + 1][h - dist[i]])
+                            dir[i][h] = -1
+                        }
+                    }
+
+                    dp[i][h] = res
+                }
             }
         }
 
