@@ -1,3 +1,4 @@
+// DIY logic
 class Solution {
     fun lengthOfLastWord(s: String): Int {
         var p = s.length-1
@@ -9,4 +10,14 @@ class Solution {
         }
         return count
     }
+}
+
+// Kotlin functions
+class Solution {
+    fun lengthOfLastWord(s: String) = s
+        .reversed()
+        .asIterable()
+        .dropWhile { it == ' ' }
+        .takeWhile { it != ' ' }
+        .count()
 }
