@@ -1,54 +1,35 @@
 class Solution {
-    
-    val dir = arrayOf(
-        intArrayOf(1,0),
-        intArrayOf(-1,0),
-        intArrayOf(0,1),
-        intArrayOf(0,-1)
-    )
-    
-    fun exist(board: Array<CharArray>, word: String): Boolean {
-        
-        fun isValid(i: Int, j: Int) = i in (0 until board.size) && j in (0 until board[0].size) && board[i][j] != '.'
-        
-        fun dfs(i: Int, j: Int, index: Int): Boolean {
-            if(board[i][j] != word[index] || index == word.length)
-                return false
-            if(index == word.length-1) // and board[i][j] == word[index] is true here
-                return true
-            val temp = board[i][j]
-            board[i][j] = '.'
-            var res = false
-            for(d in dir){
-                val newI = i + d[0]
-                val newJ = j + d[1]
-                if(isValid(newI, newJ)){
-                    res = res or dfs(newI, newJ, index+1)
+    fun exist(b: Array<CharArray>, w: String): Boolean {
+        val m = b.size
+        val n = b[0].size
+        val dir = intArrayOf(0, 1, 0, -1, 0)
+
+        fun dfs(i: Int, j: Int, k: Int): Boolean {
+            if (k == w.lastIndex) return if (b[i][j] == w[k]) true else false
+            if (b[i][j] != w[k]) return false
+
+            val temp = b[i][j]
+            b[i][j] = '@'
+
+            for (d in 0..3) {
+                val ni = i + dir[d]
+                val nj = j + dir[d + 1]
+                if (ni in 0 until m && nj in 0 until n && b[ni][nj] != '@') {
+                    if (dfs(ni, nj, k + 1)) return true
                 }
             }
-            // backtracking, if all paths from here gave us false, we set this position as not visited...
-            // ...as we might visit it again in another path. See example below
-            if(res == false)
-                board[i][j] = temp
-            return res
+
+            b[i][j] = temp
+
+            return false
         }
-        
-        for(i in 0 until board.size) {
-            for(j in 0 until board[0].size) {
-                if(word[0] == board[i][j]) {
-                    if(dfs(i,j,0) == true)
-                        return true
-                }
+
+        for (i in 0 until m) {
+            for (j in 0 until n) {
+                if (dfs(i, j, 0)) return true
             }
         }
+
         return false
     }
 }
-
-/**
-[["A","B","C","E"],
- ["S","F","E","S"],
- ["A","D","E","E"]]
-
-"ABCESEEEFS"
-**/
