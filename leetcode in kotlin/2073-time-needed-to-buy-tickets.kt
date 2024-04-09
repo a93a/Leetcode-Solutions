@@ -9,3 +9,13 @@ class Solution {
         return res
     }
 }
+
+// or shorter version
+class Solution {
+    fun timeRequiredToBuy(t: IntArray, k: Int): Int {
+        var res = 0
+        for (i in t.indices)
+            res += minOf(if (i > k) t[k] - 1 else t[k], t[i])
+        return res
+    }
+}
