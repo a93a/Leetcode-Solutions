@@ -19,3 +19,20 @@ class Solution {
         return res
     }
 }
+
+// use fold
+class Solution {
+    fun timeRequiredToBuy(t: IntArray, k: Int) = t
+        .foldIndexed(0) { i, sum, v ->
+            sum + minOf(if (i > k) t[k] - 1 else t[k], v)
+        }
+}
+
+// another cool way I found on LC with sumOf()
+class Solution {
+    fun timeRequiredToBuy(t: IntArray, k: Int) = t
+        .withIndex()
+        .sumOf { (i, v) ->
+            minOf(if (i > k) t[k] - 1 else t[k], t[i])
+        }
+}
