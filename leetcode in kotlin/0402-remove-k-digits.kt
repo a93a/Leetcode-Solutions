@@ -1,18 +1,23 @@
 class Solution {
-    fun removeKdigits(num: String, k: Int): String {
-        val stack = Stack<Char>() //monotonic stack 
-        var count = k
-        for(i in 0 until num.length){
-            while(count > 0 && !stack.isEmpty() && num[i] < stack.peek()){
-                stack.pop() //remove the larger int
-                count--
+    fun removeKdigits(s: String, k: Int): String {
+        val q = LinkedList<Char> ()
+
+        var k = k
+        for (i in s.indices) {
+            while (k > 0 && q.isNotEmpty() && s[i] < q.peekLast()) {
+                q.removeLast()
+                k--
             }
-            stack.push(num[i])
+            q.addLast(s[i])
         } 
-        repeat(count){ //pop the last k integers (largest integers)
-            stack.pop()
+
+        repeat (k) {
+            q.removeLast()
         }
-        val sum = stack.joinToString("")
-        return if(sum == "") "0" else sum.toBigInteger().toString() //to int to remove all leading Zeros, instead of using Strinbuilder
+
+        while (q.isNotEmpty() && q.peekFirst() == '0') 
+        q.removeFirst()
+
+        return if(q.isEmpty()) "0" else q.joinToString("")
     }
 }
