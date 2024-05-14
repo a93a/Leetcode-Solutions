@@ -106,6 +106,7 @@ I have also started adding resources and templates below, for all things importa
 - [Sliding window](https://www.geeksforgeeks.org/window-sliding-technique/)
 - [Memoization](https://en.wikipedia.org/wiki/Memoization)
 - [Digit DP](https://www.geeksforgeeks.org/digit-dp-introduction/)
+- [Reroot DP (calculate x for all y nodes etc)](https://usaco.guide/gold/all-roots?lang=cpp)
 
 
 ### Math
