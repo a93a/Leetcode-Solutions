@@ -107,6 +107,7 @@ I have also started adding resources and templates below, for all things importa
 - [Memoization](https://en.wikipedia.org/wiki/Memoization)
 - [Digit DP](https://www.geeksforgeeks.org/digit-dp-introduction/)
 - [Reroot DP (calculate x for all y nodes etc)](https://usaco.guide/gold/all-roots?lang=cpp)
+- [Day–Stout–Warren algorithm to rebalance BSTs](https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm)
 
 
 ### Math
