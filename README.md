@@ -122,3 +122,5 @@ I have also started adding resources and templates below, for all things importa
 - [Usaco guide, curated list of techniques](https://usaco.guide/general/using-this-guide?lang=cpp)
 - [Top Algorithms and Data Structures for Competitive Programming](https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/)
 - [KTH's ICPC team reference document](https://github.com/kth-competitive-programming/kactl/tree/main)
+- [Handbook of geometry for competitive programmers](https://victorlecomte.com/cp-geo.pdf)
+- [KTH Principles of Algorithmic Problem Solving](https://www.csc.kth.se/~jsannemo/slask/main.pdf)
