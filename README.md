@@ -48,6 +48,7 @@ I have also started adding resources and templates below, for all things importa
 - [Bipartite graph](https://en.wikipedia.org/wiki/Bipartite_graph#)
 - [Color coding in graphs](https://en.wikipedia.org/wiki/Color-coding)
 - [Hungarian algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm)
+- [Maximum flow and minimum cut in network flows](https://www.cs.princeton.edu/~wayne/kleinberg-tardos/pdf/07NetworkFlowI.pdf)
 
 ### Trees
 - [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
